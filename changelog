@@ -1,0 +1,173 @@
+mikmod (3.2.4-1) UNRELEASED; urgency=low
+
+  * Update to version 3.2.4
+
+ -- David Griffith <dave@661.org>  Sun, 24 Nov 2013 14:30:51 -0800
+
+mikmod (3.2.1-4) unstable; urgency=low
+
+  * Bump debhelper compat level to 9.
+  * Update Standards-Version to 3.9.3 (no changes required)
+  * Recommend oss-compat.
+
+ -- Gergely Nagy <algernon@madhouse-project.org>  Fri, 06 Apr 2012 00:07:30 +0200
+
+mikmod (3.2.1-3) unstable; urgency=low
+
+  * New maintainer. (Closes: #628163).
+  * Convert to dh(7) short-form.
+    + As a result, don't strip binaries when nostrip is specified in
+      DEB_BUILD_OPTIONS. (Closes: #437566)
+  * Update Standards-Version to 3.9.2.
+  * Add Homepage and VCS-* fields.
+  * Convert to Format: 3.0 (quilt).
+  * Use autotools-dev to refresh config.sub/config.guess.
+
+ -- Gergely Nagy <algernon@madhouse-project.org>  Sat, 29 Oct 2011 21:19:22 +0200
+
+mikmod (3.2.1-2) unstable; urgency=low
+
+  * Fix playmode documentation in the manpage. The default: output of
+    mikmod -h does depend on your actual mikmod configuration, and is correct
+    for an unconfigured mikmod. (Closes: #305445)
+  * Fix manpage to use HYPHEN-MINUS ("\-") instead of HYPHEN ("-"), which
+    would be rendered differently on unicode terminals.
+
+ -- Ingo Saitz <ingo@debian.org>  Thu, 28 Apr 2005 18:52:14 +0200
+
+mikmod (3.2.1-1) unstable; urgency=low
+
+  * New upstream version from Raphael Assenat (Closes: #214431)
+    + New upstream maintainer
+    + Includes all patches from the previous debian version
+    + Now uses color on capable terminals
+  * Eliminate some compile warnings.
+  * Document --color in the manpage.
+  * Preventively fix Bug #104980 again.
+  * Package complies to debian policy 3.6.1: no changes.
+
+ -- Ingo Saitz <ingo@debian.org>  Wed, 31 Dec 2003 03:57:34 +0100
+
+mikmod (3.1.6-7) unstable; urgency=low
+
+  * Fixed va_arg handling in mconfedit.c (FTBFS on hppa) (Closes: #196012)
+
+ -- Ingo Saitz <ingo@debian.org>  Wed,  4 Jun 2003 12:19:43 +0200
+
+mikmod (3.1.6-6) unstable; urgency=medium
+
+  * Fix possible (?) buffer overflow and malicious filename in marchiver.c
+  * Can use filenames with spaces in archives now, and
+  * Added additional prefixes found on aminet (Closes: #193634)
+  * Added archivers as Suggests (all but gzip and tar, those are Essential).
+  * Package complies to debian policy 3.5.10
+
+ -- Ingo Saitz <ingo@debian.org>  Mon,  2 Jun 2003 11:26:11 +0200
+
+mikmod (3.1.6-5) unstable; urgency=low
+
+  * Debian Policy 3.5.8: Adapt to new DEB_BUILD_OPTIONS.
+  * Most probably the old bug fixed in libmikmod2 3.1.9-4. Since I never heard
+    from the reporter, I close it (Closes: #81000)
+  * Split patches from the source into debian/patches/.
+  * Remove use of dh_testversion.
+  * Point to /usr/share/common-licenses/GPL-2 in copyright.
+
+ -- Ingo Saitz <ingo@debian.org>  Thu, 23 Jan 2003 14:07:28 +0100
+
+mikmod (3.1.6-4) unstable; urgency=low
+
+  * fix compiling with gcc 3.0 (printf is a macro, Closes: #104980).
+  * fix broken autoconf on new architectures (no bug yet :)
+  * more documentation fixes (mikmod --help) and cleanup.
+  * Package complies with Policy 3.5.5: no changes.
+
+ -- Ingo Saitz <ingo@debian.org>  Fri, 20 Jul 2001 22:29:24 +0200
+
+mikmod (3.1.6-3) unstable; urgency=low
+
+  * New Maintainer
+  * Recompiled package (Closes: #64698, #91589)
+  * Policy 3.5.2:
+    - added Build-Depends: (Closes: #85249, #88570)
+    - parse DEB_BUILD_OPTIONS for "debug"
+  * Fixed getopt processing and documentation (manpage, Closes: #88867)
+
+ -- Ingo Saitz <ingo@debian.org>  Sat, 31 Mar 2001 00:16:50 +0200
+
+mikmod (3.1.6-2) unstable; urgency=low
+
+  * Applied upstream -a level patch
+
+ -- Joseph Carter <knghtbrd@debian.org>  Thu,  5 Aug 1999 06:38:17 -0700
+
+mikmod (3.1.6-1) unstable; urgency=low
+
+  * New upstream version
+  * Policy 3.0.0, debhelper v2 (hi joeyh!)  
+  * Removed Suggests line for non-free archivers since if you have tracks
+    that are compressed with an archiver you know you need the archiver.
+
+ -- Joseph Carter <knghtbrd@debian.org>  Thu,  8 Jul 1999 06:22:27 -0700
+
+mikmod (3.1.5-1) unstable; urgency=low
+
+  * New upstream version (Closes: #34493, #39421)
+  * libmikmod is now a seperate package which will only use ALSA or EsounD
+    if they are available (Closes: #38242, #29133)
+
+ -- Joseph Carter <knghtbrd@debian.org>  Sun, 13 Jun 1999 15:14:32 -0700
+
+mikmod (3.1.2-2) unstable; urgency=low
+
+  * Rebuilt for potato's ALSA
+
+ -- Joseph Carter <knghtbrd@debian.org>  Thu, 28 Jan 1999 12:21:21 -0800
+
+mikmod (3.1.2-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Joseph Carter <knghtbrd@debian.org>  Fri, 18 Dec 1998 23:58:33 -0800
+
+mikmod (3.0.4-2) unstable; urgency=low
+
+  * Applied 3 upstream patches to fix bugs and add ALSA support
+  * Built also with ALSA support
+
+ -- Joseph Carter <knghtbrd@debian.org>  Tue, 13 Oct 1998 09:38:22 -0700
+
+mikmod (3.0.4-1) unstable; urgency=low
+
+  * New maintainer.
+  * New upstream version.
+  * This package is now DFSG free (GPL and LGPL).
+  * Massive upstream revisions including both non-compressed and compressed
+    sample Impulse Tracker support.
+  * Built with both OSS and EsounD driver support.
+
+ -- Joseph Carter <knghtbrd@debian.org>  Fri,  9 Oct 1998 09:14:53 -0700
+
+mikmod (2.14-3) unstable; urgency=low
+
+  * Libc 6 release - replaces non-maintainer release (fixes bug #14933)
+  * Back to my non-debstd rules file, so changelog.Debian compressed again (fixes bug #15436)
+  * Removed surplus documentation (fixes bug #18111)
+  * Next release (v3.0) due soon, should be DFSG.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Thu, 12 Mar 1998 23:31:32 +0000
+
+mikmod (2.14-2) unstable; urgency=low
+
+  * Oops! Changed banner message from development version...
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Wed, 1 Jan 1997 16:40:39 +0000
+
+mikmod (2.14-1) unstable; urgency=low
+
+  * New upstream version.
+  * Fixes Bug#6276 - mikcvt now has a man page.
+  * Fixes Bug#5671 - errors now re-displayed on exit.
+
+ -- Steve McIntyre <stevem@chiark.greenend.org.uk>  Wed, 1 Jan 1997 14:10:39 +0000
+
